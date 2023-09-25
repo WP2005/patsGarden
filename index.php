@@ -7,9 +7,12 @@
 
 <html>
 	<head>
-		<title>Ethereal by HTML5 UP</title>
+		<title>Pats Farms Garden Center, Merrick, NY</title>
+		<meta name="description" content="Garden Center in Merrick, NY. We sell indoor and outdoor plants, trees, shrubs, ground covers">
+  		<meta name="keywords" content="Indoor and outdoor plants, trees, shrubs, ground covers, roses, opiaries, cactus, palms, azaleas, pumpkins, christmas trees.">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="shortcut icon" href="favicon.ico" />
 		<link rel="stylesheet" href="<?php echo get_theme_file_uri('assets/css/main.css') ?>" />
 		<noscript><link rel="stylesheet" href="<?php echo get_theme_file_uri('assets/css/noscript.css') ?>" /></noscript>
 		<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
@@ -52,8 +55,10 @@
 
 								</div>
 								
-								
+								<!--								
 								<div class="image span-1-75 signage" data-position="25% 25%"></div>
+								-->
+
 							</section>
 							<!-- Panel (Full Image) -->
 							<section class="panel">
@@ -66,7 +71,7 @@
 								<div class="content span-3-75">
 									<h2 class="major">About Us</h2>
 									<p>Welcome to your neighborhood Garden Center. We are located next to Pat’s Farms Supermarket and we have been serving the community over 38yrs. Here at Pat’s Farms Garden Center, we aim to provide the best quality plants at great prices. We have great selections of Annuals, Perennials, Tropicals, Vegetables, Herbs, Trees and Shrubs. We also provide the customers with seasonal decor all year round. We carry all your gardening needs from fertilizer, soil, pots, gardening tools and so much more.</p>
-									<a href="/images/ads.pdf" target=_blank class="icon brands icon"> 
+									<a href="/wp-content/uploads/2023/09/ads.pdf" target=_blank class="icon brands icon"> 
 										<i class="fas fa-ad fa-icon-medium fa-coupon-styling"></i>Weekly Ads 
 									</a>
 									<a href="#Special" target=_blank class="icon brands icon"> 
@@ -99,7 +104,7 @@
 										<li>Fertilizers</li>
 										<li>Indoor/Outdoor plants</li>
 									</ul>
-									<a href="http://localhost:10016/wp-content/uploads/2023/09/ads.pdf" target=_blank class="icon brands icon"> 
+									<a href="/wp-content/uploads/2023/09/ads.pdf" target=_blank class="icon brands icon"> 
 										<i class="fas fa-ad fa-icon-medium fa-coupon-styling"></i>Weekly Ads 
 									</a>
 									<a href="#Special" target=_blank class="icon brands icon"> 
@@ -140,7 +145,7 @@
 								</div>
 							</section>	
 
-							<!-- Panel (Seasonal) -->
+							<!-- Panel (Fall Specials) -->
 							<section class="panel color4-alt" id="Special">
 								<div class="intro color1">
 									<h2 class="major">Fall Specials</h2>
@@ -151,7 +156,7 @@
 										<li>opiaries, cactus, palms</li>
 										<li>azaleas & more...</li>
 									</ul>
-									<a href="http://localhost:10016/wp-content/uploads/2023/09/ads.pdf" target=_blank class="icon brands icon"> 
+									<a href="/wp-content/uploads/2023/09/ads.pdf" target=_blank class="icon brands icon"> 
 										<i class="fas fa-ad fa-icon-medium fa-coupon-styling"></i>Weekly Ads 
 									</a>
 								</div>
@@ -182,7 +187,7 @@
 										<i class="far fa-arrow-alt-circle-right"></i> Know your USDA Hardiness Zone.
 									</a>
 									<hr>
-									<a href="http://localhost:10016/wp-content/uploads/2023/09/ads.pdf" target=_blank class="icon brands icon"> 
+									<a href="/wp-content/uploads/2023/09/ads.pdf" target=_blank class="icon brands icon"> 
 										<i class="fas fa-ad fa-icon-medium fa-coupon-styling"></i>Weekly Ads 
 									</a>
 									<a href="#Special" target=_blank class="icon brands icon"> 
@@ -207,7 +212,7 @@
 									<ul>
 										<li>10% off your entire purchase*</li>
 										<li>Enroll in person at our store.</li>
-										<li><a href="http://localhost:10016/wp-content/uploads/2023/09/Rewards Flyer.pdf" target=_blank class="icon brands icon"> 
+										<li><a href="/wp-content/uploads/2023/09/rewards-flyer.pdf" target=_blank class="icon brands icon"> 
 										See brochure</li>
 									</a>
 									</ul>
