@@ -1,8 +1,10 @@
 <!DOCTYPE HTML>
 <!--
-	Ethereal by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	Website: Patsfarmsgardencenter.com
+	Date Launched: 9.25.2023
+	Designed by: Websiteperfect.com, llc.
+	Project Mgr: JL
+	Platform: Wordpress
 -->
 
 <html>
@@ -31,8 +33,8 @@
 								<img src="<?php echo get_theme_file_uri('images/PFGC-logo-1.png') ?>" class="logo" /><hr>
 									
 								
-									<a  href="https://goo.gl/maps/sKPjhTe5H8qWxEns9"  target=_blank class="icon brands icon"> 
-										<i class="fas fa-map-marker-alt  fa-icon-medium fa-map-styling"></i>1126 Merrick Ave.  N. Merrick, NY 11566
+									<a  href="https://www.google.com/maps/place/Pat's+Farms+Garden+Center/@40.6929074,-73.5647873,20.25z/data=!4m7!3m6!1s0x89c27d199a6d2a45:0x3d6e4713d5e1a5a3!4b1!8m2!3d40.6929734!4d-73.5645429!16s%2Fg%2F11stgsw0wk?entry=ttu"  target=_blank class="icon brands icon"> 
+										<i class="fas fa-map-marker-alt  fa-icon-medium fa-map-styling"></i>1126 Merrick Ave.,  Merrick, NY 11566
 									</a>
 									<span><i class="fas fa-mobile-alt fa-icon-medium fa-map-styling" ></i> 516-539-2313 </span>
 									
@@ -42,7 +44,7 @@
 										<i class="fab fa-facebook fa-icon-medium fa-coupon-styling"></i> Facebook 
 									</a>
 
-									<a href="http://localhost:10016/wp-content/uploads/2023/09/ads.pdf" target=_blank class="icon brands icon"> 
+									<a href="/wp-content/uploads/2023/09/ads.pdf" target=_blank class="icon brands icon"> 
 										<i class="fas fa-ad fa-icon-medium fa-coupon-styling"></i>Weekly Ads 
 									</a>
 									<a href="#Special" target=_blank class="icon brands icon"> 
@@ -144,17 +146,16 @@
 									/></a>
 								</div>
 							</section>	
-
 							<!-- Panel (Fall Specials) -->
 							<section class="panel color4-alt" id="Special">
 								<div class="intro color1">
 									<h2 class="major">Fall Specials</h2>
-									<h4>Discounts on...</h4>
+									<h4>Low prices on...</h4>
 									<ul>
-										<li>Most plants, trees, shrubs</li>
-										<li>ground covers, roses</li>
-										<li>opiaries, cactus, palms</li>
-										<li>azaleas & more...</li>
+										<li>Shrubs</li>
+										<li>mums</li>
+										<li>Pumpkins</li>
+										<li>Fall/Halloween decorations</li>
 									</ul>
 									<a href="/wp-content/uploads/2023/09/ads.pdf" target=_blank class="icon brands icon"> 
 										<i class="fas fa-ad fa-icon-medium fa-coupon-styling"></i>Weekly Ads 
@@ -196,14 +197,12 @@
 								</div>
 								
 							</section>
-
 							<!-- Panel (Full Image) -->
 							<section class="panel">
 								<div class="gallery">			
 									<a href="images/gallery/fulls/09.jpg" class="image  span-2-5" data-position="right"><img src="<?php echo get_theme_file_uri('images/pic01-d.jpg') ?>" alt="" /></a>
 								</div>
 							</section>
-
 							<!-- Panel (Member) -->
 							<section class="panel color4-alt" id="Member">
 								<div class="intro color1">
@@ -220,7 +219,6 @@
 									<sub>* Certain restrictions apply</sub>
 								</div>
 							</section>
-
 							<!-- Panel (End Panel) -->
 							<section class="panel banner right">
 								<div class="color0 endpanel">
@@ -238,7 +236,5 @@
 		<script src="<?php echo get_theme_file_uri('assets/js/browser.min.js') ?>"></script>
 		<script src="<?php echo get_theme_file_uri('assets/js/breakpoints.min.js') ?>"></script>
 		<script src="<?php echo get_theme_file_uri('assets/js/main.js') ?>"></script>
-		
-
 	</body>
 </html>
