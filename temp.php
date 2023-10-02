@@ -1,4 +1,3 @@
-<?php get_header(); ?>
 	<!-- Page Wrapper -->
 	<div id="page-wrapper">
 		<!-- Wrapper -->
@@ -204,5 +203,3 @@
 			</section>
 		</div>
 	</div>
-
-<?php get_footer(); ?>
