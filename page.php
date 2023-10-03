@@ -1,7 +1,8 @@
 <?php 
     get_header();  // Read WP header.php
     include 'read_wp.php'; //Read custom fields functions
-    $home_fields = read_WPfields('home'); //Read custom fields into $home_fields array. 
+    $home_fields = get_home(); //Read custom fields into $home_fields array. 
+    $about_fields = get_about(); //Read custom fields into $about_fields array. 
     //echo  "<pre>Test Output: "; print_r($home_fields);
 ?>
 
@@ -40,21 +41,23 @@
 			<!-- Panel (Single Image) -->
 			<section class="panel">
 				<div class="gallery">			
-					<a href="images/gallery/fulls/09.jpg" class="image  span-2-5" data-position="right"><img src="<?php echo get_theme_file_uri('images/pg-1.jpg') ?>" alt="" /></a>
+					<a href="<?php echo $about_fields['image_url'] ?>" class="image  span-2-5" data-position="right"><img src="<?php echo $about_fields['image_url'] ?>" alt="" /></a>
 				</div>
 			</section>
 
 			<!-- Panel (About Us) -->
 			<section class="panel spotlight xmedium right">
 				<div class="content span-3-75">
-					<h2 class="major">About Us</h2>
-					<p>Welcome to your neighborhood Garden Center. We are located next to Pat’s Farms Supermarket and we have been serving the community over 38yrs. Here at Pat’s Farms Garden Center, we aim to provide the best quality plants at great prices. We have great selections of Annuals, Perennials, Tropicals, Vegetables, Herbs, Trees and Shrubs. We also provide the customers with seasonal decor all year round. We carry all your gardening needs from fertilizer, soil, pots, gardening tools and so much more.</p>
-					<a href="/wp-content/uploads/2023/09/ads.pdf" target=_blank class="icon brands icon"> 
+					<h2 class="major"><?php echo $about_fields['title'] ?></h2>
+					<p>
+						<?php echo $about_fields['content'] ?>
+					</p>
+					<a href="<?php echo $home_fields['weekly_ads_url'] ?>" target=_blank class="icon brands icon"> 
 						<i class="fas fa-ad fa-icon-medium fa-coupon-styling"></i>Weekly Ads 
 					</a>
 					<a href="#Special" target=_blank class="icon brands icon"> 
 						<i class="fas fa-tags fa-icon-small fa-coupon-styling"></i>Fall Inventory 
-					</a>								
+					</a>							
 				</div>
 				<div class="image filtered tinted" data-position="top left">
 					<img src="<?php echo get_theme_file_uri('images/pic02.jpg') ?>" alt="" />
