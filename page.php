@@ -2,7 +2,10 @@
     get_header();  // Read WP header.php
     include 'read_wp.php'; //Read custom fields functions
     $home_fields = get_home(); //Read custom fields into $home_fields array. 
-    $about_fields = get_about(); //Read custom fields into $about_fields array. 
+    $about_fields = get_about();
+    $whatwecarry_fields = get_whatwecarry();  
+    $specials_fields = get_specials();  
+    $tips_fields = get_tips();  
     //echo  "<pre>Test Output: "; print_r($home_fields);
 ?>
 
@@ -50,7 +53,7 @@
 				<div class="content span-3-75">
 					<h2 class="major"><?php echo $about_fields['title'] ?></h2>
 					<p>
-						<?php echo $about_fields['content'] ?>
+						<?php echo htmlspecialchars_decode($about_fields['content']); ?>
 					</p>
 					<a href="<?php echo $home_fields['weekly_ads_url'] ?>" target=_blank class="icon brands icon"> 
 						<i class="fas fa-ad fa-icon-medium fa-coupon-styling"></i>Weekly Ads 
@@ -78,14 +81,9 @@
 
 			<!-- Panel (What we Carry) -->
 			<section class="panel color4-alt">
-				<div class="intro color4">
-					<h2 class="major">What we carry:</h2>
-					<ul>
-						<li>Garden Tools</li>
-						<li>Garden Pots</li>
-						<li>Fertilizers</li>
-						<li>Indoor/Outdoor plants</li>
-					</ul>
+				<div class="intro color4">	
+					<?php echo htmlspecialchars_decode($whatwecarry_fields['content']); ?>
+					
 					<a href="/wp-content/uploads/2023/09/ads.pdf" target=_blank class="icon brands icon"> 
 						<i class="fas fa-ad fa-icon-medium fa-coupon-styling"></i>Weekly Ads 
 					</a>
@@ -130,17 +128,15 @@
 			<!-- Panel (Fall Specials) -->
 			<section class="panel color4-alt" id="Special">
 				<div class="intro color1">
-					<h2 class="major">Fall Specials</h2>
-					<h4>Low prices on...</h4>
-					<ul>
-						<li>Shrubs</li>
-						<li>mums</li>
-						<li>Pumpkins</li>
-						<li>Fall/Halloween decorations</li>
-					</ul>
-					<a href="/wp-content/uploads/2023/09/ads.pdf" target=_blank class="icon brands icon"> 
+				
+					<?php echo htmlspecialchars_decode($specials_fields['content']); ?>
+					
+					<p></p>
+					<a href="<?php echo $home_fields['weekly_ads_url'] ?>" target=_blank class="icon brands icon"> 
 						<i class="fas fa-ad fa-icon-medium fa-coupon-styling"></i>Weekly Ads 
 					</a>
+
+
 				</div>
 			</section>
 
@@ -163,15 +159,10 @@
 			<!-- Panel (Tricks Tips) -->
 			<section class="panel banner right" >
 				<div class="content color0 span-3-75">
-					<h2 class="major">GARDENING TRICKS & TIPS</h2>
-					<a href="https://www.pennlive.com/gardening/2018/05/vegetable_gardening_isnt_just.html" target=_blank class="icon brands"> 
-						<i class="far fa-arrow-alt-circle-right"></i> Things to Consider When Starting a Vegetable Garden.
-					</a>
-					<a href="https://planthardiness.ars.usda.gov/" target=_blank class="icon brands"> 
-						<i class="far fa-arrow-alt-circle-right"></i> Know your USDA Hardiness Zone.
-					</a>
-					<hr>
-					<a href="/wp-content/uploads/2023/09/ads.pdf" target=_blank class="icon brands icon"> 
+					<?php echo htmlspecialchars_decode($tips_fields['content']); ?>
+
+					<p></p>
+					<a href="<?php echo $home_fields['weekly_ads_url'] ?>" target=_blank class="icon brands icon"> 
 						<i class="fas fa-ad fa-icon-medium fa-coupon-styling"></i>Weekly Ads 
 					</a>
 					<a href="#Special" target=_blank class="icon brands icon"> 
