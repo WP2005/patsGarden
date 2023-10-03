@@ -15,20 +15,20 @@ function read_WPfields($page_slug) {
         // Loop through the posts (there should be only one)
         while ($page_query->have_posts()) {
             $page_query->the_post();
-            $page_content = get_the_content();
-            $page_id = get_the_ID();
-            // Check if ACF function exists
-            if (function_exists('get_field')) {
-                // Get custom fields...
+            if (function_exists('get_field')) {        
+                
+                // make sure ad url is not null or it will page error.
+                if (!empty($weekly_ads = get_field('weekly_ads'))) 
+                    $ad_url = $weekly_ads['url'];
+                else 
+                    $ad_url='#';
                 $home = array( 
                     'address' => trim(get_field('address')),
                     'map_link' => trim(get_field('map_link')),
                     'telephone' => trim(get_field('telephone')),
                     'store_hours' => trim(get_field('store_hours')),
                     'facebook' => trim(get_field('facebook')),
-                    'weekly_ads' => trim(get_field('weekly_ads')),
-                    'seasonal_specials' => trim(get_field('seasonal_specials')),
-                    'membership_rewards' => trim(get_field('membership_rewards'))
+                    'weekly_ads_url' => $ad_url
                 );
                 return $home;
             } else {

@@ -13,15 +13,15 @@
 			<section class="panel banner right"  id="first">
 				<div class="content color0 span-3-75">
 					<img src="<?php echo get_theme_file_uri('images/PFGC-logo-1.png') ?>" class="logo" /><hr>
-					<a  href="https://www.google.com/maps/place/Pat's+Farms+Garden+Center/@40.6929074,-73.5647873,20.25z/data=!4m7!3m6!1s0x89c27d199a6d2a45:0x3d6e4713d5e1a5a3!4b1!8m2!3d40.6929734!4d-73.5645429!16s%2Fg%2F11stgsw0wk?entry=ttu"  target=_blank class="icon brands icon"> 
+					<a  href="<?php echo $home_fields['map_link'] ?>"  target=_blank class="icon brands icon"> 
 						<i class="fas fa-map-marker-alt  fa-icon-medium fa-map-styling"></i><?php echo $home_fields['address'] ?>
 					</a>
 					<span> <i class="fas fa-mobile-alt fa-icon-medium fa-map-styling" ></i><?php echo $home_fields['telephone'] ?></span>
 					<span><i class="far fa-clock fa-icon-medium fa-map-styling fa-clock-styling"></i> <?php echo $home_fields['store_hours'] ?> </span>
-					<a href="https://www.facebook.com/profile.php?id=100088339561403" target=_blank class="icon brands icon"> 
+					<a href="<?php echo $home_fields['facebook'] ?>" target=_blank class="icon brands icon"> 
 						<i class="fab fa-facebook fa-icon-medium fa-coupon-styling"></i> Facebook 
 					</a>
-					<a href="/wp-content/uploads/2023/09/ads.pdf" target=_blank class="icon brands icon"> 
+					<a href="<?php echo $home_fields['weekly_ads_url'] ?>" target=_blank class="icon brands icon"> 
 						<i class="fas fa-ad fa-icon-medium fa-coupon-styling"></i>Weekly Ads 
 					</a>
 					<a href="#Special" target=_blank class="icon brands icon"> 
