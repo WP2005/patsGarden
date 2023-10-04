@@ -6,7 +6,9 @@
     $whatwecarry_fields = get_whatwecarry();  
     $specials_fields = get_specials();  
     $tips_fields = get_tips();  
+    $members_fields = get_members();  
     //echo  "<pre>Test Output: "; print_r($home_fields);
+	echo "<p> ******* Test Output: " .  $whatwecarry_fields['acf_photos']['photo_4'];
 ?>
 
 	<!-- Page Wrapper -->
@@ -44,7 +46,7 @@
 			<!-- Panel (Single Image) -->
 			<section class="panel">
 				<div class="gallery">			
-					<a href="<?php echo $about_fields['image_url'] ?>" class="image  span-2-5" data-position="right"><img src="<?php echo $about_fields['image_url'] ?>" alt="" /></a>
+					<a href="<?php echo $about_fields['featured_img_url'] ?>" class="image  span-2-5" data-position="right"><img src="<?php echo $about_fields['featured_img_url'] ?>" alt="" /></a>
 				</div>
 			</section>
 
@@ -67,14 +69,14 @@
 				</div>
 			</section>
 
-			<!-- Panel (Image montage) -->
+			<!-- Panel (4 Image Montage) -->
 			<section class="panel">
 				<div class="gallery">
 					<div class="group span-4-5">
-						<a href="images/gallery/fulls/05.jpg" class="image  span-3" data-position="top"><img src="<?php echo get_theme_file_uri('images/pfgc-fall-2.png') ?>" alt="" /></a>
-						<a href="images/gallery/fulls/06.jpg" class="image  span-1-5" data-position="center"><img src="<?php echo get_theme_file_uri('images/gallery/thumbs/06a.jp') ?>g" alt="" /></a>
-						<a href="images/gallery/fulls/07.jpg" class="image  span-1-5" data-position="bottom"><img src="<?php echo get_theme_file_uri('images/gallery/thumbs/07a.jpg') ?>" alt="" /></a>
-						<a href="images/gallery/fulls/08.jpg" class="image  span-3" data-position="top"><img src="<?php echo get_theme_file_uri('images/gallery/thumbs/08b.jpg') ?>" alt="" /></a>
+						<a href="<?php echo $whatwecarry_fields['acf_photos']['photo_1'] ?>" class="image  span-3" data-position="top">     <img src="<?php echo $whatwecarry_fields['acf_photos']['photo_1'] ?>" alt="" /></a>
+						<a href="<?php echo $whatwecarry_fields['acf_photos']['photo_2'] ?>" class="image  span-1-5" data-position="center"><img src="<?php echo $whatwecarry_fields['acf_photos']['photo_2'] ?>" alt="" /></a>
+						<a href="<?php echo $whatwecarry_fields['acf_photos']['photo_3'] ?>" class="image  span-1-5" data-position="bottom"><img src="<?php echo $whatwecarry_fields['acf_photos']['photo_3'] ?>" alt="" /></a>
+						<a href="<?php echo $whatwecarry_fields['acf_photos']['photo_4'] ?>" class="image  span-3" data-position="top">     <img src="<?php echo $whatwecarry_fields['acf_photos']['photo_4'] ?>" alt="" /></a>
 					</div>
 				</div>
 			</section>
@@ -93,7 +95,7 @@
 				</div>
 			</section>
 
-			<!-- Panel (Img Montage) -->
+			<!-- Panel (4 Image Montage) -->
 			<section class="panel">
 				<div class="gallery">
 					<div class="group span-3">
@@ -140,7 +142,7 @@
 				</div>
 			</section>
 
-			<!-- Panel (Full Image) -->
+			<!-- Panel (4 Image Gallery) -->
 			<section class="panel">
 				<div class="gallery">
 					<a href="images/gallery/fulls/09.jpg" class="image  span-1-5" data-position="right"><img src="<?php echo get_theme_file_uri('images/pfgc-fall-4.png') ?> " alt="" /></a>
@@ -160,7 +162,6 @@
 			<section class="panel banner right" >
 				<div class="content color0 span-3-75">
 					<?php echo htmlspecialchars_decode($tips_fields['content']); ?>
-
 					<p></p>
 					<a href="<?php echo $home_fields['weekly_ads_url'] ?>" target=_blank class="icon brands icon"> 
 						<i class="fas fa-ad fa-icon-medium fa-coupon-styling"></i>Weekly Ads 
@@ -174,22 +175,21 @@
 			<!-- Panel (Single Image) -->
 			<section class="panel">
 				<div class="gallery">			
-					<a href="images/gallery/fulls/09.jpg" class="image  span-2-5" data-position="right"><img src="<?php echo get_theme_file_uri('images/pic01-d.jpg') ?>" alt="" /></a>
+					<a href="<?php echo $members_fields['featured_img_url'] ?>" class="image  span-2-5" data-position="right"><img src="<?php echo $members_fields['featured_img_url'] ?>" alt="" /></a>
 				</div>
 			</section>
 
 			<!-- Panel (Member) -->
 			<section class="panel color4-alt" id="Member">
 				<div class="intro color1">
-					<h2 class="major">Welcome Rewards</h2>
-					<h4>Enroll today and access exclusive benefits everytime you shop at Pat’s Farms Garden Center.</h4>
-					<ul>
-						<li>10% off your entire purchase*</li>
-						<li>Enroll in person at our store.</li>
-						<li><a href="/wp-content/uploads/2023/09/rewards-flyer.pdf" target=_blank class="icon brands icon"> 
-						See brochure</li>
+				<?php echo htmlspecialchars_decode($members_fields['content']); ?>
+					<p></p>
+					<a href="<?php echo $home_fields['weekly_ads_url'] ?>" target=_blank class="icon brands icon"> 
+						<i class="fas fa-ad fa-icon-medium fa-coupon-styling"></i>Weekly Ads 
 					</a>
-					</ul>
+					<a href="#Special" target=_blank class="icon brands icon"> 
+						<i class="fas fa-tags fa-icon-small fa-coupon-styling"></i>Fall Inventory 
+					</a>
 					<br><br>
 					<sub>* Certain restrictions apply</sub>
 				</div>

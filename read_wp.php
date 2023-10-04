@@ -57,8 +57,8 @@ function get_about() {
             if (has_post_thumbnail()){  // Check if a featured image exists
                 //echo get_the_post_thumbnail();
                 $thumbnail_id = get_post_thumbnail_id();
-                $image_url = wp_get_attachment_image_src($thumbnail_id, 'full');
-                $image_url = $image_url[0];
+                $featured_img_url = wp_get_attachment_image_src($thumbnail_id, 'full');
+                $featured_img_url = $featured_img_url[0];
             }
             else 
                 echo '<img src="path-to-your-fallback-image.jpg" alt="Fallback Image" />';
@@ -66,7 +66,7 @@ function get_about() {
             $page_fields = array( 
                 'title' => esc_attr(get_the_title()),
                 'content' => $page_content,
-                'image_url' => $image_url
+                'featured_img_url' => $featured_img_url
             );
             return $page_fields;    
         }
@@ -91,21 +91,47 @@ function get_whatwecarry() {
         while ($page_query->have_posts()) {
             $page_query->the_post();
             $page_content = esc_attr(get_the_content());
+            $page_id = get_the_ID();
             
             if (has_post_thumbnail()){  // Check if a featured image exists
                 //echo get_the_post_thumbnail();
                 $thumbnail_id = get_post_thumbnail_id();
-                $image_url = wp_get_attachment_image_src($thumbnail_id, 'full');
-                $image_url = $image_url[0];
+                $featured_img_url = wp_get_attachment_image_src($thumbnail_id, 'full');
+                $featured_img_url = $featured_img_url[0];
             }
             else 
-                $image_url = "#";
+                $featured_img_url = "#";
 
-            $page_fields = array( 
-                'title' => esc_attr(get_the_title()),
-                'content' => $page_content,
-                'image_url' => $image_url
-            );
+            // Get custom fields from ACF if the function exists...
+            if (function_exists('get_field')) {        
+                // Loop through the field keys
+                $field_keys = array_keys(get_fields($page_id));
+                $acf_photos = array();
+                foreach ($field_keys as $field_key) {
+                    // Get the field value using the field key
+                    $field_value = get_field($field_key, $page_id);
+                    // Make sure it's a photo field...
+                    if (strpos($field_key, 'photo_') === 0) { 
+                        $acf_photo_url=get_field($field_key, $page_id);
+                        $acf_photos[$field_key] = $acf_photo_url;
+                        //echo '****** Field key: "' . $field_key . ' - ' . $acf_photo_url;
+                    } else {
+                        $acf_photos[$field_key] = '#'; // No photo.
+                    }
+                }
+
+                //----- Create return field data array....
+                $page_fields = array( 
+                    'title' => esc_attr(get_the_title()),
+                    'content' => $page_content,
+                    'featured_img_url' => $featured_img_url
+                );
+                $page_fields['acf_photos'] = $acf_photos;
+                return $page_fields;
+            } else {
+                echo '<p>********* Error: ACF plugin is not installed or activated.*******</p> ';
+            }
+
             return $page_fields;    
         }
         // Restore the global post data
@@ -134,16 +160,16 @@ function get_specials() {
                 //echo get_the_post_thumbnail();
                 echo "****** ";
                 $thumbnail_id = get_post_thumbnail_id();
-                $image_url = wp_get_attachment_image_src($thumbnail_id, 'full');
-                $image_url = $image_url[0];
+                $featured_img_url = wp_get_attachment_image_src($thumbnail_id, 'full');
+                $featured_img_url = $featured_img_url[0];
             }
             else 
-                $image_url="#";
+                $featured_img_url="#";
 
             $page_fields = array( 
                 'title' => esc_attr(get_the_title()),
                 'content' => $page_content,
-                'image_url' => $image_url,
+                'featured_img_url' => $featured_img_url,
             );
             return $page_fields;    
         }
@@ -172,16 +198,16 @@ function get_tips() {
             if (has_post_thumbnail()){  // Check if a featured image exists
                 //echo get_the_post_thumbnail();
                 $thumbnail_id = get_post_thumbnail_id();
-                $image_url = wp_get_attachment_image_src($thumbnail_id, 'full');
-                $image_url = $image_url[0];
+                $featured_img_url = wp_get_attachment_image_src($thumbnail_id, 'full');
+                $featured_img_url = $featured_img_url[0];
             }
             else 
-                $image_url="#";
+                $featured_img_url="#";
 
             $page_fields = array( 
                 'title' => esc_attr(get_the_title()),
                 'content' => $page_content,
-                'image_url' => $image_url,
+                'featured_img_url' => $featured_img_url,
             );
             return $page_fields;    
         }
@@ -191,5 +217,44 @@ function get_tips() {
         echo  '<p>********* Error: Tips page not found.*******</p> ';
     }
 }
+
+function get_members() {
+    // Create a WP_Query to retrieve the page
+    $page_query = new WP_Query(array(
+        'post_type' => 'page',          // Set the post type to 'page'
+        'post_status' => 'publish',    	// Include only published pages
+        'posts_per_page' => 1,         	// Limit to one page
+        'name' => 'members'      		    // Specify the slug name
+    ));
+    // If the page exists...
+    if ($page_query->have_posts()) {
+        // Loop through the posts (there should be only one)
+        while ($page_query->have_posts()) {
+            $page_query->the_post();
+            $page_content = esc_attr(get_the_content());
+            
+            if (has_post_thumbnail()){  // Check if a featured image exists
+                //echo get_the_post_thumbnail();
+                $thumbnail_id = get_post_thumbnail_id();
+                $featured_img_url = wp_get_attachment_image_src($thumbnail_id, 'full');
+                $featured_img_url = $featured_img_url[0];
+            }
+            else 
+                $featured_img_url="#";
+
+            $page_fields = array( 
+                'title' => esc_attr(get_the_title()),
+                'content' => $page_content,
+                'featured_img_url' => $featured_img_url,
+            );
+            return $page_fields;    
+        }
+        // Restore the global post data
+        wp_reset_postdata();
+    } else {
+        echo  '<p>********* Error: Members page not found.*******</p> ';
+    }
+}
+
 
 ?>
