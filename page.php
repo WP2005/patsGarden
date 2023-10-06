@@ -1,14 +1,22 @@
+<!--
+	Website: Patsfarmsgardencenter.com
+	Filename: page.php
+	Description: Single page design; WP primary page
+	First released: 10.5.2023 
+	Modification History: 
+-->
 <?php 
     get_header();  // Read WP header.php
-    include 'read_wp.php'; //Read custom fields functions
-    $home_fields = get_home(); //Read custom fields into $home_fields array. 
-    $about_fields = get_about();
-    $whatwecarry_fields = get_whatwecarry();  
-    $specials_fields = get_specials();  
-    $tips_fields = get_tips();  
-    $members_fields = get_members();  
-    //echo  "<pre>Test Output: "; print_r($home_fields);
-	echo "<p> ******* Test Output: " .  $whatwecarry_fields['acf_photos']['photo_4'];
+   	include 'get_page_fields.php'; //Read custom fields functions
+    //Read custom fields into $home_fields array. 
+	$home_fields = get_home();
+	// Get fields from pages with 4 photo
+	$whatwecarry_fields = get_page_4pics("what-we-carry"); 
+	$specials_fields = get_page_4pics("specials");
+	$tips_fields = get_page_4pics("tips"); 
+	// Get fields from pages with 1 featured photo
+	$about_fields = get_page_1pic("about-us");
+	$members_fields = get_page_1pic("members");
 ?>
 
 	<!-- Page Wrapper -->
@@ -85,7 +93,6 @@
 			<section class="panel color4-alt">
 				<div class="intro color4">	
 					<?php echo htmlspecialchars_decode($whatwecarry_fields['content']); ?>
-					
 					<a href="/wp-content/uploads/2023/09/ads.pdf" target=_blank class="icon brands icon"> 
 						<i class="fas fa-ad fa-icon-medium fa-coupon-styling"></i>Weekly Ads 
 					</a>
@@ -100,29 +107,29 @@
 				<div class="gallery">
 					<div class="group span-3">
 						<a
-							href="images/gallery/fulls/01.jpg"
+							href="<?php echo $specials_fields['acf_photos']['photo_1'] ?>"
 							class="image xfiltered span-3"
 							data-position="bottom"
-							><img src="https://morningchores.com/wp-content/uploads/2019/10/10-10-10-Fertilizer-What-It-Is-and-the-Right-and-Wrong-Way-to-Use-It-FB.jpg " alt=""
+							><img src="<?php echo $specials_fields['acf_photos']['photo_1'] ?>" alt=""
 						/></a>
 						<a
-							href="images/gallery/fulls/02.jpg"
+							href="<?php echo $specials_fields['acf_photos']['photo_2'] ?>"
 							class="image xfiltered span-1-5"
 							data-position="center"
-							><img src="https://images.squarespace-cdn.com/content/v1/60481e8b74b043581a581d36/1668083305479-BFC28HQE5I6ZTQANL565/Untitled+design+%2898%29+%281%29.jpg " alt=""
+							><img src="<?php echo $specials_fields['acf_photos']['photo_2'] ?>" alt=""
 						/></a>
 						<a
-							href="images/gallery/fulls/03.jpg"
+							href="<?php echo $specials_fields['acf_photos']['photo_3'] ?>"
 							class="image xfiltered span-1-5"
 							data-position="bottom"
-							><img src="<?php echo get_theme_file_uri('images/pfgc-fall-4.png') ?> " alt=""
+							><img src="<?php echo $specials_fields['acf_photos']['photo_3'] ?> " alt=""
 						/></a>
 					</div>
 					<a
-					href="images/gallery/fulls/04.jpg"
+					href="<?php echo $specials_fields['acf_photos']['photo_4'] ?>"
 					class="image xfiltered span-2-5"
 					data-position="top"
-					><img src="<?php echo get_theme_file_uri('images/gallery/thumbs/09a.jpg') ?> " alt=""
+					><img src="<?php echo $specials_fields['acf_photos']['photo_4'] ?> " alt=""
 					/></a>
 				</div>
 			</section>	
@@ -130,31 +137,27 @@
 			<!-- Panel (Fall Specials) -->
 			<section class="panel color4-alt" id="Special">
 				<div class="intro color1">
-				
 					<?php echo htmlspecialchars_decode($specials_fields['content']); ?>
-					
 					<p></p>
 					<a href="<?php echo $home_fields['weekly_ads_url'] ?>" target=_blank class="icon brands icon"> 
 						<i class="fas fa-ad fa-icon-medium fa-coupon-styling"></i>Weekly Ads 
 					</a>
-
-
 				</div>
 			</section>
 
 			<!-- Panel (4 Image Gallery) -->
 			<section class="panel">
 				<div class="gallery">
-					<a href="images/gallery/fulls/09.jpg" class="image  span-1-5" data-position="right"><img src="<?php echo get_theme_file_uri('images/pfgc-fall-4.png') ?> " alt="" /></a>
+					<a href="<?php echo $tips_fields['acf_photos']['photo_1'] ?>" class="image  span-1-5" data-position="right"><img src="<?php echo $tips_fields['acf_photos']['photo_1'] ?>" alt="" /></a>
 				</div>
 				<div class="gallery">
-					<a href="images/gallery/fulls/09.jpg" class="image  span-1-5" data-position="right"><img src="<?php echo get_theme_file_uri('images/pfgc-fall-3c.png') ?>"  alt="" /></a>
+					<a href="<?php echo $tips_fields['acf_photos']['photo_2'] ?>" class="image  span-1-5" data-position="right"><img src="<?php echo $tips_fields['acf_photos']['photo_2'] ?>"  alt="" /></a>
 				</div>
 				<div class="gallery">
-					<a href="images/gallery/fulls/09.jpg" class="image  span-1-5" data-position="right"><img src="<?php echo get_theme_file_uri('images/pfgc-fall-10.png') ?> " alt="" /></a>
+					<a href="<?php echo $tips_fields['acf_photos']['photo_3'] ?>" class="image  span-1-5" data-position="right"><img src="<?php echo $tips_fields['acf_photos']['photo_3'] ?> " alt="" /></a>
 				</div>
 				<div class="gallery">
-					<a href="images/gallery/fulls/09.jpg" class="image  span-1-5" data-position="right"><img src="<?php echo get_theme_file_uri('images/pfgc-fall-11.png') ?> " alt="" /></a>
+					<a href="<?php echo $tips_fields['acf_photos']['photo_4'] ?>" class="image  span-1-5" data-position="right"><img src="<?php echo $tips_fields['acf_photos']['photo_4'] ?>" alt="" /></a>
 				</div>
 			</section>
 
@@ -204,6 +207,7 @@
 			</section>
 		</div>
 	</div>
+
 
 <?php get_footer(); ?>
 
