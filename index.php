@@ -1,5 +1,5 @@
 <?php 
-    get_header();  // Read WP header.php
+    get_header();  // Read WP header.phpasdfasf
     $pagename="what-we-carry"
     echo "<br>+++++++++++++++++  " . $pagename;
     $page_query = new WP_Query(array(
