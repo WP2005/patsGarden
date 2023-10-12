@@ -6,6 +6,9 @@
 	Modification History: 
 -->
 <?php
+    // No image is the logo on Facebook...
+    $noImage_url="https://scontent-hou1-1.xx.fbcdn.net/v/t39.30808-6/316002149_113084144956160_8020839242963918285_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_ohc=G65githAcCkAX-LOg9h&_nc_ht=scontent-hou1-1.xx&oh=00_AfAKw3PnGrdEQh8Rpbx6TFzOHsS6By7sOVxSDuYGYnwrYg&oe=652D8649";
+    
     function get_home() {
         // Create a WP_Query to retrieve the page
         $page_query = new WP_Query(array(
@@ -45,6 +48,7 @@
     }
     function get_page_4pics($pagename) {
         // Create a WP_Query to retrieve the page
+        global $noImage_url;
         $page_query = new WP_Query(array(
             'post_type' => 'page',          // Set the post type to 'page'
             'post_status' => 'publish',    	// Include only published pages
@@ -87,10 +91,10 @@
                                     //echo '<br>****** Field key: "' . $field_key . ' - ' . $acf_photo_url;
                                 }
                                 else {
-                                    $acf_photos[$field_key] = '#';
+                                    $acf_photos[$field_key] = $noImage_url;
                                 }
                             } else {
-                                $acf_photos[$field_key] = '#'; // No photo.
+                                $acf_photos[$field_key] = $noImage_url; // No photo.
                             }
                         }
                     }
@@ -117,6 +121,7 @@
     }
     function get_page_1pic($pagename) {
         // Create a WP_Query to retrieve the page
+        global $noImage_url;
         $page_query = new WP_Query(array(
             'post_type' => 'page',          // Set the post type to 'page'
             'post_status' => 'publish',    	// Include only published pages
@@ -137,8 +142,11 @@
                     $featured_img_url = $featured_img_url[0];
                 }
                 else 
-                    echo '<img src="path-to-your-fallback-image.jpg" alt="Fallback Image" />';
+                    $featured_img_url=$noImage_url;
 
+                if (empty($featured_img_url)){
+                    $featured_img_url=$noImage_url;
+                };
                 $page_fields = array( 
                     'title' => esc_attr(get_the_title()),
                     'content' => $page_content,
