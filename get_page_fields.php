@@ -7,8 +7,7 @@
 -->
 <?php
     // No image is the logo on Facebook...
-    $noImage_url="https://scontent-hou1-1.xx.fbcdn.net/v/t39.30808-6/316002149_113084144956160_8020839242963918285_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_ohc=G65githAcCkAX-LOg9h&_nc_ht=scontent-hou1-1.xx&oh=00_AfAKw3PnGrdEQh8Rpbx6TFzOHsS6By7sOVxSDuYGYnwrYg&oe=652D8649";
-    
+    $noImage_url="/wp-content/uploads/316002149_113084144956160_8020839242963918285_n.jpg";
     function get_home() {
         // Create a WP_Query to retrieve the page
         $page_query = new WP_Query(array(
