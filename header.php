@@ -1,10 +1,8 @@
 <!DOCTYPE HTML>
 
 <!--
-	Website: Patsfarmsgardencenter.com
 	Filename: header.php
 	Description: Common header all WP pages
-	First released: 10.5.2023 
 	Modification History: 
 -->
 

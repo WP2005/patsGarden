@@ -1,8 +1,6 @@
 <!--
-	Website: Patsfarmsgardencenter.com
 	Filename: get_page_fields.php
 	Description: functions to read page fields into variables.
-	First released: 10.5.2023 
 	Modification History: 
 -->
 <?php

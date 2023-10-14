@@ -1,9 +1,7 @@
 <?php
     /* 
-    Website: Patsfarmsgardencenter.com
     Filename: functions.php
     Description: Let WP load the functions, includes files
-    First released: 10.5.2023 
     Modification History: 
     */
 

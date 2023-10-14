@@ -1,8 +1,6 @@
 <!--
-	Website: Patsfarmsgardencenter.com
 	Filename: footer.php
 	Description: Common footer all WP pages
-	First released: 10.5.2023 
 	Modification History: 
 -->
 		
