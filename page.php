@@ -1,7 +1,7 @@
 <!--
 	Website: Patsfarmsgardencenter.com
 	Filename: page.php
-	Description: Single page design; WP primary page
+	Description: Single page design; WP primary page. Design based on Ethereal.
 	First released: 10.5.2023 
 	Modification History: 
 -->
