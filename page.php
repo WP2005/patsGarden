@@ -93,7 +93,7 @@
 			<section class="panel color4-alt">
 				<div class="intro color4">	
 					<?php echo htmlspecialchars_decode($whatwecarry_fields['content']); ?>
-					<a href="/wp-content/uploads/2023/09/ads.pdf" target=_blank class="icon brands icon"> 
+					<a href="<?php echo $home_fields['weekly_ads_url'] ?>" target=_blank class="icon brands icon"> 
 						<i class="fas fa-ad fa-icon-medium fa-coupon-styling"></i>Weekly Ads 
 					</a>
 					<a href="#Special" target=_blank class="icon brands icon"> 
